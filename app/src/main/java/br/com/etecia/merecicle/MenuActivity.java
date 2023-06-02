@@ -10,7 +10,7 @@ import com.google.android.material.card.MaterialCardView;
 
 import br.com.etecia.merecicle.ColetadosActivity;
 
-public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
+public class MenuActivity extends AppCompatActivity  {
     MaterialCardView idcoleta, idDistribuidora, idLocalizacao, idMateriais, idEmpresa, idParceiros;
 
     @Override
@@ -25,42 +25,48 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         idEmpresa = findViewById(R.id.idEmpresa);
         idParceiros = findViewById(R.id.idParceiros);
 
-        idcoleta.setOnClickListener(this);
-        idDistribuidora.setOnClickListener(this);
-        idLocalizacao.setOnClickListener(this);
-        idMateriais.setOnClickListener(this);
-        idEmpresa.setOnClickListener(this);
-        idParceiros.setOnClickListener(this);
-
-    }
-
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.idcoleta:
+        idcoleta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),
                         ColetadosActivity.class));
-                break;
-            case R.id.idDistribuidora:
+            }
+        });
+        idDistribuidora.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),
                         DistribuidoraActivity.class));
-                break;
-            case R.id.idLocalizacao:
+            }
+        });
+        idLocalizacao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),
                         LocalizaActivity.class));
-                break;
-            case R.id.idMateriais:
+            }
+        });
+        idMateriais.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),
                         MaterialActivity.class));
-                break;
-            case R.id.idEmpresa:
+            }
+        });
+        idEmpresa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),
                         EmpresaActivity.class));
-                break;
-            case R.id.idParceiros:
+            }
+        });
+        idParceiros.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),
                         UsuarioActivity.class));
-                break;
-        }
+            }
+        });
+
     }
 }
