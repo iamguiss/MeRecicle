@@ -1,4 +1,4 @@
-package br.com.etecia.myapp;
+package br.com.etecia.merecicle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,56 +8,58 @@ import android.view.View;
 
 import com.google.android.material.card.MaterialCardView;
 
+import br.com.etecia.merecicle.ColetadosActivity;
+
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
-    MaterialCardView idMenuPets, idMenuAlimentos, idMenuDoacoes, idMenuServicos, idMenuLocalizar, idMenuParceiros;
+    MaterialCardView idcoleta, idDistribuidora, idLocalizacao, idMateriais, idEmpresa, idParceiros;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu_layout);
 
-        idMenuPets = findViewById(R.id.idMenuPets);
-        idMenuAlimentos = findViewById(R.id.idMenuAlimentos);
-        idMenuDoacoes = findViewById(R.id.idMenuDoacoes);
-        idMenuServicos = findViewById(R.id.idMenuServicos);
-        idMenuParceiros = findViewById(R.id.idMenuParceiros);
-        idMenuLocalizar = findViewById(R.id.idMenuLocalizar);
+        idcoleta = findViewById(R.id.idcoleta);
+        idDistribuidora = findViewById(R.id.idDistribuidora);
+        idLocalizacao = findViewById(R.id.idLocalizacao);
+        idMateriais = findViewById(R.id.idMateriais);
+        idEmpresa = findViewById(R.id.idEmpresa);
+        idParceiros = findViewById(R.id.idParceiros);
 
-        idMenuPets.setOnClickListener(this);
-        idMenuParceiros.setOnClickListener(this);
-        idMenuLocalizar.setOnClickListener(this);
-        idMenuDoacoes.setOnClickListener(this);
-        idMenuAlimentos.setOnClickListener(this);
-        idMenuServicos.setOnClickListener(this);
+        idcoleta.setOnClickListener(this);
+        idDistribuidora.setOnClickListener(this);
+        idLocalizacao.setOnClickListener(this);
+        idMateriais.setOnClickListener(this);
+        idEmpresa.setOnClickListener(this);
+        idParceiros.setOnClickListener(this);
 
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.idMenuPets:
+            case R.id.idcoleta:
                 startActivity(new Intent(getApplicationContext(),
-                        PetsActivity.class));
+                        ColetadosActivity.class));
                 break;
-            case R.id.idMenuAlimentos:
+            case R.id.idDistribuidora:
                 startActivity(new Intent(getApplicationContext(),
-                        AlimentosActivity.class));
+                        DistribuidoraActivity.class));
                 break;
-            case R.id.idMenuDoacoes:
+            case R.id.idLocalizacao:
                 startActivity(new Intent(getApplicationContext(),
-                        DoacoesActivity.class));
+                        LocalizaActivity.class));
                 break;
-            case R.id.idMenuLocalizar:
+            case R.id.idMateriais:
                 startActivity(new Intent(getApplicationContext(),
-                        LocalizarActivity.class));
+                        MaterialActivity.class));
                 break;
-            case R.id.idMenuServicos:
+            case R.id.idEmpresa:
                 startActivity(new Intent(getApplicationContext(),
-                        ServicosActivity.class));
+                        EmpresaActivity.class));
                 break;
-            case R.id.idMenuParceiros:
+            case R.id.idParceiros:
                 startActivity(new Intent(getApplicationContext(),
-                        ParceirosActivity.class));
+                        UsuarioActivity.class));
                 break;
         }
     }

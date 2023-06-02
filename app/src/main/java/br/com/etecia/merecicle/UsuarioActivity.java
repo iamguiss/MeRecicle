@@ -1,7 +1,6 @@
 package br.com.etecia.merecicle;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 
 public class UsuarioActivity extends AppCompatActivity {
